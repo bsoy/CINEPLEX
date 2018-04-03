@@ -1,0 +1,48 @@
+.container
+	.row
+		.page-header.clearfix
+			h1= title
+.navbar.fixed-bottom.navbar-dark.bg-dark
+	.container
+		.navbar-header
+			a.navbar-brand(href="/") Flounder Manic
+		if user
+			p.navbar-text.navbar-right
+				span Welcome,#{user.name}
+				span &nbsp;|&nbsp;
+				a.navbar-link(href="/logout") Logout
+		else
+			p.navbar-text.navbar-right
+				a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") Register
+				span &nbsp;|&nbsp;
+				a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") Login
+#signupModal.modal.fade
+	.modal-dialog
+		.modal-content
+			form(method="POST", action="/user/signup")
+				.modal-header Register
+				.modal-body
+					.form-group
+						label(for="signupName") username
+						input#signupName.form-control(name="user[name]", type="text")
+					.form-group
+						label(for="signupPassword") password
+						input#signupPassword.form-control(name="user[password]", type="text")
+				.modal-footer
+					button.btn.btn-default(type="button", data-dismiss="modal") Close
+					button.btn.btn-success(type="submit") Submit
+#signinModal.modal.fade
+	.modal-dialog
+		.modal-content
+			form(method="POST", action="/user/signin")
+				.modal-header Login
+				.modal-body
+					.form-group
+						label(for="signinName") username
+						input#signupName.form-control(name="user[name]", type="text")
+					.form-group
+						label(for="signinPassword") password
+						input#signupPassword.form-control(name="user[password]", type="text")
+				.modal-footer
+					button.btn.btn-default(type="button", data-dismiss="modal") Close
+					button.btn.btn-success(type="submit") Submit

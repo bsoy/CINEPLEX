@@ -1,13 +1,28 @@
 {
   "name": "cineplex",
   "version": "1.0.0",
+  "private": true,
   "description": "HI WEB.",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^2.0.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
-    "jade": "^1.11.0"
+    "express-session": "^1.15.6",
+    "grunt": "^1.0.2",
+    "grunt-cli": "^1.2.0",
+    "jade": "^1.11.0",
+    "moment": "^2.22.0",
+    "mongoose": "^5.0.12",
+    "morgan": "^1.9.0",
+    "underscore": "^1.8.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-nodemon": "^0.4.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +30,7 @@
     "type": "git",
     "url": "git+https://github.com/bsoy/CINEPLEX.git"
   },
-  "author": "beeb",
+  "author": "beeb_",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bsoy/CINEPLEX/issues"

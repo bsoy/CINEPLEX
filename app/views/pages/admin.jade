@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			form.form-horizontal(method="post", action="/admin/movie")
+				input(type="hidden", name="movie[_id]", value="#{movie._id}")
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") Title
+					.col-sm-10
+						input#inputTitle.form-control(type="text", name="movie[title]", value="#{movie.title}")
+				.form-group
+					label.col-sm-2.control-label(for="inputDirector") Director
+					.col-sm-10
+						input#inputDirector.form-control(type="text", name="movie[director]", value="#{movie.director}")
+				.form-group
+					label.col-sm-2.control-label(for="inputPoster") Poster
+					.col-sm-10
+						input#inputPoster.form-control(type="text", name="movie[poster]", value="#{movie.poster}")
+				.form-group
+					label.col-sm-2.control-label(for="inputFlash") Flash
+					.col-sm-10
+						input#inputFlash.form-control(type="text", name="movie[flash]", value="#{movie.flash}")
+				.form-group
+					label.col-sm-2.control-label(for="inputYear") Year
+					.col-sm-10
+						input#inputYear.form-control(type="text", name="movie[year]", value="#{movie.year}")
+				.form-group
+					label.col-sm-2.control-label(for="inputIntro") Intro
+					.col-sm-10
+						textarea#inputIntro.form-control(type="text", name="movie[intro]", value="#{movie.intro}")
+				.form-group
+					.col-sm-offset-2.col-sm-10
+					button.btn.btn-default(type="submit") Submit

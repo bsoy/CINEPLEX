@@ -1,0 +1,5 @@
+node_modules/
+gruntfile.js
+bower.json
+db-test.js
+.vscode/
